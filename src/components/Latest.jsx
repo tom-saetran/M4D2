@@ -13,7 +13,7 @@ class Latest extends React.Component {
         return (
             <>
                 <Jumbotron fluid>
-                    <Container>
+                    <Container fluid>
                         <h1 className="pb-3">Latest Releases:</h1>
                         {fantasy.map(book => (
                             <img
@@ -23,9 +23,7 @@ class Latest extends React.Component {
                                 alt="Book Cover"
                                 height="120px"
                                 onClick={() => {
-                                    this.setState({ currentBook: { ...book } })
-                                    console.log(this.state.currentBook)
-                                    this.setState({ modalShow: true })
+                                    this.setState({ currentBook: { ...book }, modalShow: true })
                                 }}
                             />
                         ))}
@@ -39,7 +37,6 @@ class Latest extends React.Component {
 }
 
 const LatestModal = props => {
-    console.log(props.book)
     return (
         <Modal {...props} size="lg" aria-labelledby="latestModal" centered>
             <Modal.Header closeButton>
